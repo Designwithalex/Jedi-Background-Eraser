@@ -1,14 +1,14 @@
 // Set the source folder containing the images
-var sourceFolder = Folder.selectDialog("C:\Users\acost\Documents\Azura\buzos\jpg");
+var sourceFolder = Folder.selectDialog("Select the source folder");
 
 // Set the output folder for processed images
-var outputFolder = Folder.selectDialog("C:\Users\acost\Documents\Azura\buzos\png");
+var outputFolder = Folder.selectDialog("Select the output folder");
 
 // Get all the files in the source folder
 var files = sourceFolder.getFiles();
 
 // Set the name of the action you want to execute
-var actionName = "Background Removal"; // Replace with the name of your action
+var actionName = "YourActionName"; // Replace with the name of your action
 
 // Loop through each file
 for (var i = 0; i < files.length; i++) {
