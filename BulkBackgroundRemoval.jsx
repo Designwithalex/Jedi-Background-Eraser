@@ -1,32 +1,70 @@
-// Set the source folder containing the images
-var sourceFolder = Folder.selectDialog("Select the source folder");
+function runBulkBackgroundRemoval() {
+  // Set the source folder containing the images
+  alert("Choose an input directory");
+  var sourceFolder = Folder.selectDialog("Select the input folder");
 
-// Set the output folder for processed images
-var outputFolder = Folder.selectDialog("Select the output folder");
+  if (sourceFolder == null) {
+    var result = confirm("Do you want to cancel the bulk opening process?");
+    if (result) {
+      alert("Process canceled. Exiting the script.");
+      // Exit the function if canceled
+      return;
+    } else {
+      sourceFolder = Folder.selectDialog("Select the input folder");
+      if (sourceFolder == null) {
+        alert("No input folder selected. Exiting the script.");
+        // Exit the function if no input folder selected
+        return;
+      }
+    }
+  }
 
-// Get all the files in the source folder
-var files = sourceFolder.getFiles();
+  // Set the output folder for processed images
+  alert("Choose an output directory");
+  var outputFolder = Folder.selectDialog("Select the output folder");
 
-// Set the name of the action you want to execute
-var actionName = "YourActionName"; // Replace with the name of your action
+  if (outputFolder == null) {
+    var result = confirm("Do you want to cancel the process and exit?");
+    if (result) {
+      alert("Process canceled. Exiting the script.");
+      // Exit the function if canceled
+      return;
+    } else {
+      outputFolder = Folder.selectDialog("Select the output folder");
+      if (outputFolder == null) {
+        alert("No output folder selected. Exiting the script.");
+        // Exit the function if no output folder selected
+        return;
+      }
+    }
+  }
 
-// Loop through each file
-for (var i = 0; i < files.length; i++) {
-  var file = files[i];
+  // Get all the files in the source folder
+  var files = sourceFolder.getFiles();
 
-  // Open the file
-  var doc = open(file);
+  // Set the name of the action you want to execute
+  var actionName = "Background Removal"; // Replace with the name of your action
 
-  // Execute the action
-  app.doAction(actionName, "Default Actions");
+  // Loop through each file
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
 
-  // Save the processed image in the output folder
-  var saveOptions = new PNGSaveOptions();
-  saveOptions.transparency = true;
-  doc.saveAs(new File(outputFolder + "/" + doc.name), saveOptions);
+    // Open the file
+    var doc = open(file);
 
-  // Close the file without saving changes
-  doc.close(SaveOptions.DONOTSAVECHANGES);
+    // Execute the action
+    app.doAction(actionName, "Default Actions");
+
+    // Save the processed image in the output folder
+    var saveOptions = new PNGSaveOptions();
+    saveOptions.transparency = true;
+    doc.saveAs(new File(outputFolder + "/" + doc.name), saveOptions);
+
+    // Close the file without saving changes
+    doc.close(SaveOptions.DONOTSAVECHANGES);
+  }
+
+  alert("Action execution completed on all files and saved in the output folder!");
 }
 
-alert("Action execution completed on all files and saved in the output folder!");
+runBulkBackgroundRemoval(); // Execute the script
