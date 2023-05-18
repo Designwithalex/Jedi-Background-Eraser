@@ -1,70 +1,70 @@
 function runBulkBackgroundRemoval() {
-  // Set the source folder containing the images
-  alert("Choose an input directory");
-  var sourceFolder = Folder.selectDialog("Select the input folder");
+  // Establecer la carpeta de origen que contiene las imágenes
+  alert("Necesito que selecciones la carpeta con las imagenes,a las cuales, le querés sacar el fondo");
+  var sourceFolder = Folder.selectDialog("Selecciona la carpeta de entrada");
 
   if (sourceFolder == null) {
-    var result = confirm("Do you want to cancel the bulk opening process?");
+    var result = confirm("¿Deseas cancelar el proceso de apertura en lote?");
     if (result) {
-      alert("Process canceled. Exiting the script.");
-      // Exit the function if canceled
+      alert("Proceso cancelado. Saliendo del script.");
+      // Salir de la función si se cancela
       return;
     } else {
-      sourceFolder = Folder.selectDialog("Select the input folder");
+      sourceFolder = Folder.selectDialog("Selecciona la carpeta de entrada");
       if (sourceFolder == null) {
-        alert("No input folder selected. Exiting the script.");
-        // Exit the function if no input folder selected
+        alert("No se ha seleccionado una carpeta de entrada. Saliendo del script.");
+        // Salir de la función si no se selecciona una carpeta de entrada
         return;
       }
     }
   }
 
-  // Set the output folder for processed images
-  alert("Choose an output directory");
-  var outputFolder = Folder.selectDialog("Select the output folder");
+  // Establecer la carpeta de salida para las imágenes procesadas
+  alert("Genial, en este ultimo paso, seleccioná la carpeta en la cual se van a guardar todas las imagenes sin el fondo");
+  var outputFolder = Folder.selectDialog("Selecciona la carpeta de salida");
 
   if (outputFolder == null) {
-    var result = confirm("Do you want to cancel the process and exit?");
+    var result = confirm("¿Deseas cancelar el proceso y salir?");
     if (result) {
-      alert("Process canceled. Exiting the script.");
-      // Exit the function if canceled
+      alert("Proceso cancelado. Saliendo del script.");
+      // Salir de la función si se cancela
       return;
     } else {
-      outputFolder = Folder.selectDialog("Select the output folder");
+      outputFolder = Folder.selectDialog("Selecciona la carpeta de salida");
       if (outputFolder == null) {
-        alert("No output folder selected. Exiting the script.");
-        // Exit the function if no output folder selected
+        alert("No se ha seleccionado una carpeta de salida. Saliendo del script.");
+        // Salir de la función si no se selecciona una carpeta de salida
         return;
       }
     }
   }
 
-  // Get all the files in the source folder
+  // Obtener todos los archivos en la carpeta de origen
   var files = sourceFolder.getFiles();
 
-  // Set the name of the action you want to execute
-  var actionName = "Background Eraser"; // Replace with the name of your action
+  // Establecer el nombre de la acción que deseas ejecutar
+  var actionName = "Background Eraser"; // Reemplaza con el nombre de tu acción
 
-  // Loop through each file
+  // Recorrer cada archivo
   for (var i = 0; i < files.length; i++) {
     var file = files[i];
 
-    // Open the file
+    // Abrir el archivo
     var doc = open(file);
 
-    // Execute the action
+    // Ejecutar la acción
     app.doAction(actionName, "Jedi Folder");
 
-    // Save the processed image in the output folder
+    // Guardar la imagen procesada en la carpeta de salida
     var saveOptions = new PNGSaveOptions();
     saveOptions.transparency = true;
     doc.saveAs(new File(outputFolder + "/" + doc.name), saveOptions);
 
-    // Close the file without saving changes
+    // Cerrar el archivo sin guardar cambios
     doc.close(SaveOptions.DONOTSAVECHANGES);
   }
 
-  alert("Action execution completed on all files and saved in the output folder!");
+  alert("¡Ejecución de la acción completada en todos los archivos y guardada en la carpeta de salida!");
 }
 
-runBulkBackgroundRemoval(); // Execute the script
+runBulkBackgroundRemoval(); // Ejecutar el script
