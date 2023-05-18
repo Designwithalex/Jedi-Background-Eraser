@@ -1,0 +1,45 @@
+## Descripción general
+
+El Jedi Background Eraser es un potente script diseñado para automatizar el proceso de eliminación de fondos en varias imágenes usando Adobe Photoshop. Este script ahorra tiempo y esfuerzo al aplicar una acción predefinida a un lote de imágenes, lo que resulta en fotos sin fondo. Ya seas un fotógrafo profesional, diseñador gráfico o un entusiasta de Star Wars, este script te ayudará a dominar el arte de la eliminación de fondos con precisión digna de un Jedi.
+
+## Características
+
+- Eliminación de fondos masiva: El script te permite quitar fondos de múltiples imágenes a la vez, ahorrándote tiempo valioso.
+- Soporte para acciones personalizadas: Puedes cargar y utilizar tu propia acción de Photoshop, como la acción "JediAction" proporcionada, para definir el proceso de eliminación de fondos según tus preferencias.
+- Guardado automatizado: El script guarda automáticamente las imágenes procesadas en una carpeta de salida especificada, lo que lo hace conveniente y sin complicaciones.
+
+## Requisitos del sistema
+
+- Adobe Photoshop: El script requiere tener Adobe Photoshop instalado en tu computadora para funcionar correctamente.
+
+## Instalación
+
+1. Descarga el script "JediBackgroundEraser" desde la fuente proporcionada.
+2. Abre Adobe Photoshop en tu computadora.
+3. Abre el menú "Scripts" desde el menú "Archivo" en Adobe Photoshop.
+4. Selecciona "Buscar" o "Cargar Script" (según la versión de Photoshop) y localiza el archivo "JediBackgroundEraser.jsx" que descargaste.
+5. Haz clic en "Abrir" para cargar el script en Photoshop.
+
+## Uso
+
+1. Preparar las carpetas de entrada y salida:
+   - Crea dos carpetas: "Imágenes con Fondo" e "Imágenes sin Fondo" en la ubicación que desees.
+   - Coloca las imágenes que deseas procesar en la carpeta "Imágenes con Fondo".
+
+2. Cargar la Acción:
+   - En Adobe Photoshop, abre el panel "Acciones" (Ventana > Acciones).
+   - Haz clic en el icono de menú del panel y selecciona "Cargar acciones".
+   - Localiza y selecciona el archivo "JediAction.atn" proporcionado con este script.
+   - Haz clic en "Abrir" para cargar la acción en Photoshop.
+
+3. Ejecutar el Script:
+   - Abre el menú "Scripts" desde el menú "Archivo" en Adobe Photoshop.
+   - Selecciona "JediBackgroundEraser" de la lista.
+   - El script te pedirá que elijas la carpeta de entrada que contiene las imágenes con fondos. Selecciona la carpeta "Imágenes con Fondo" que creaste.
+   - Luego, el script te pedirá que elijas la carpeta de salida donde se guardarán las imágenes procesadas. Selecciona la carpeta "Imágenes sin Fondo".
+   - Relájate mientras el script realiza su magia Jedi, eliminando los fondos de todas las imágenes de la carpeta de entrada utilizando la acción cargada.
+   - Una vez que el script finalice, encontrarás las imágenes sin fondo guardadas en la carpeta "Imágenes sin Fondo".
+
+## Consejos
+
+- Personalizar la Acción: Si prefieres utilizar tu propia acción de Photoshop para la eliminación de fondos

@@ -1,0 +1,52 @@
+## Overview
+
+The Jedi Background Eraser is a powerful script designed to automate the process of removing backgrounds from multiple images using Adobe Photoshop. This script saves time and effort by applying a pre-defined action to a batch of images, resulting in background-free photos. Whether you're a professional photographer, graphic designer, or a Star Wars enthusiast, this script will help you master the art of background removal with Jedi-like precision.
+
+## Features
+
+- Bulk Background Removal: The script allows you to remove backgrounds from a large number of images at once, saving you valuable time.
+- Custom Action Support: You can load and use your own Photoshop action, such as the "JediAction" provided, to define the background removal process according to your preferences.
+- Automated Saving: The script automatically saves the processed images in a specified output folder, making it convenient and hassle-free.
+
+## System Requirements
+
+- Adobe Photoshop: The script requires Adobe Photoshop installed on your computer to run successfully.
+
+## Installation
+
+1. Download the "JediBackgroundEraser" script from the provided source.
+2. Launch Adobe Photoshop on your computer.
+3. Open the "Scripts" menu from the "File" menu in Adobe Photoshop.
+4. Select "Browse" or "Load Script" (depending on your Photoshop version) and locate the "JediBackgroundEraser.jsx" file you downloaded.
+5. Click "Open" to load the script into Photoshop.
+
+## Usage
+
+1. Prepare the Input and Output Folders:
+   - Create two folders: "Images with Background" and "Images without Background" in a location of your choice.
+   - Place the images you want to process in the "Images with Background" folder.
+
+2. Load the Action:
+   - In Adobe Photoshop, open the "Actions" panel (Window > Actions).
+   - Click on the panel's menu icon and select "Load Actions".
+   - Locate and select the "JediAction.atn" file provided with this script.
+   - Click "Open" to load the action into Photoshop.
+
+3. Running the Script:
+   - Open the "Scripts" menu from the "File" menu in Adobe Photoshop.
+   - Select "JediBackgroundEraser" from the list.
+   - The script will prompt you to choose the input folder containing the images with backgrounds. Select the "Images with Background" folder you created.
+   - Next, the script will prompt you to choose the output folder where the processed images will be saved. Select the "Images without Background" folder.
+   - Sit back and relax as the script works its Jedi magic, removing the backgrounds from all the images in the input folder using the loaded action.
+   - Once the script completes, you will find the background-free images saved in the "Images without Background" folder.
+
+## Tips
+
+- Customize the Action: If you prefer to use your own Photoshop action for background removal, create and load your action instead of using the provided "JediAction". Just make sure the loaded action performs the desired background removal steps.
+- Image Formats: The script is compatible with various image formats supported by Adobe Photoshop, such as JPEG, PNG, and TIFF. Ensure your input images are in a compatible format for successful processing.
+
+## Support and Feedback
+
+For any questions, issues, or feedback related to the Jedi Background Eraser script, please contact our support team at [support@email.com].
+
+May the Force be with you as you unleash your creativity and effortlessly remove backgrounds from your images!
