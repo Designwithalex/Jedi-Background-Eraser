@@ -43,7 +43,7 @@ function runBulkBackgroundRemoval() {
   var files = sourceFolder.getFiles();
 
   // Set the name of the action you want to execute
-  var actionName = "Background Removal"; // Replace with the name of your action
+  var actionName = "Background Eraser"; // Replace with the name of your action
 
   // Loop through each file
   for (var i = 0; i < files.length; i++) {
@@ -53,7 +53,7 @@ function runBulkBackgroundRemoval() {
     var doc = open(file);
 
     // Execute the action
-    app.doAction(actionName, "Default Actions");
+    app.doAction(actionName, "Jedi Folder");
 
     // Save the processed image in the output folder
     var saveOptions = new PNGSaveOptions();
